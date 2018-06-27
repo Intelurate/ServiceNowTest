@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl/>
+        <http_method>POST</http_method>
+        <name>Upload</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+//	var gr = new GlideRecord("incident");	
+	
+	var gr = new GlideRecord("sys_ui_page");	
+	gr.addQuery('sys_id',"f547d284db031300c089793ebf96197d");	
+	gr.query();
+	
+	while (gr.next()) { 
+		
+		gr.html = '<?xml version="1.0" encoding="utf-8" ?><j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null"><p>Now!</p></j:jelly>';
+		gr.client_script = 'alert("hello fool")';
+		gr.update();
+	  // add code here to process the incident record 
+	}
+	
+    // implement resource here
+	return {
+		name: "eddie"
+	};
+	
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_236273_react_loa/upload_javascript/upload</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/upload</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-27 12:27:39</sys_created_on>
+        <sys_id>91955644db031300c089793ebf9619a4</sys_id>
+        <sys_mod_count>21</sys_mod_count>
+        <sys_name>Upload</sys_name>
+        <sys_package display_value="React_Loader" source="x_236273_react_loa">68255e00db031300c089793ebf961909</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="React_Loader">68255e00db031300c089793ebf961909</sys_scope>
+        <sys_update_name>sys_ws_operation_91955644db031300c089793ebf9619a4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-27 12:56:51</sys_updated_on>
+        <web_service_definition display_value="Upload JavaScript">af455244db031300c089793ebf9619b8</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
