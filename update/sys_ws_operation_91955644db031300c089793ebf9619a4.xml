@@ -15,8 +15,11 @@
 	gr.query();	
 	var id;
 	while (gr.next()) { 		
-		gr.html = request.body.data.html;
-		gr.client_script = request.body.data.client;
+		
+		//gs.info(request.body.data.client);
+		
+		gr.html = gs.base64Decode(request.body.data.html);
+		gr.client_script = gs.base64Decode(request.body.data.client);
 		id = gr.update();
 	}
 	
@@ -37,14 +40,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-27 12:27:39</sys_created_on>
         <sys_id>91955644db031300c089793ebf9619a4</sys_id>
-        <sys_mod_count>34</sys_mod_count>
+        <sys_mod_count>39</sys_mod_count>
         <sys_name>Upload</sys_name>
         <sys_package display_value="React_Loader" source="x_236273_react_loa">68255e00db031300c089793ebf961909</sys_package>
         <sys_policy/>
         <sys_scope display_value="React_Loader">68255e00db031300c089793ebf961909</sys_scope>
         <sys_update_name>sys_ws_operation_91955644db031300c089793ebf9619a4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-27 13:43:36</sys_updated_on>
+        <sys_updated_on>2018-06-28 12:42:16</sys_updated_on>
         <web_service_definition display_value="Upload JavaScript">af455244db031300c089793ebf9619b8</web_service_definition>
         <web_service_version/>
     </sys_ws_operation>
